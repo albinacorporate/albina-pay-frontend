@@ -1,15 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Disable all static generation
+  // Disable static export - use server-side rendering
   output: 'standalone',
-  // Don't generate static pages
-  eslint: {
-    ignoreDuringBuilds: true,
+  // Increase memory for builds
+  experimental: {
+    largePageDataBytes: 1024 * 1024 * 4, // 4MB
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  }
+  // Disable telemetry
+  telemetry: false,
 }
 
 module.exports = nextConfig
