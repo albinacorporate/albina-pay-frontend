@@ -1,14 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Disable static export - use server-side rendering
-  output: 'standalone',
-  // Increase memory for builds
+  // Remove output: 'standalone' - Vercel handles this automatically
   experimental: {
-    largePageDataBytes: 1024 * 1024 * 4, // 4MB
+    largePageDataBytes: 1024 * 1024 * 4,
   },
-  // Disable telemetry
-  telemetry: false,
 }
 
 module.exports = nextConfig
