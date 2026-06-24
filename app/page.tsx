@@ -1,8 +1,18 @@
-import Header from '../components/Header';
-import Hero from '../components/Hero';
+'use client';
+
 import dynamic from 'next/dynamic';
 
-// Load Features only on the client side - prevents server timeout
+// Load ALL components client-side only - prevents server memory issues
+const Header = dynamic(() => import('../components/Header'), {
+  ssr: false,
+  loading: () => <div className="h-20 bg-gray-900 animate-pulse"></div>
+});
+
+const Hero = dynamic(() => import('../components/Hero'), {
+  ssr: false,
+  loading: () => <div className="h-screen bg-gray-100 animate-pulse"></div>
+});
+
 const Features = dynamic(() => import('../components/Features'), {
   ssr: false,
   loading: () => (
