@@ -1,135 +1,62 @@
-import Link from 'next/link';
-import AnimatedTransaction from './AnimatedTransaction';
-import IncomeNotification from './IncomeNotification';
-import RemittaPayment from './RemittaPayment';
+'use client';
 
-export default function Features() {
+export default function RemittaPayment() {
   return (
-    <section className="bg-gray-50 py-20 lg:py-28 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* ===== INTRODUCTION SECTION ===== */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 mb-20">
-          
-          {/* LEFT SIDE: Dark Blue Transparent Card */}
-          <div className="lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start -mt-12 lg:-mt-20">
-            <div className="w-full bg-[#0A192F]/60 backdrop-blur-md border border-[#2C4A73]/20 rounded-2xl p-8 lg:p-10 shadow-2xl">
-              <p className="text-xl sm:text-2xl font-bold text-white leading-snug mb-8">
-                Design to solve Your Personal and Business Payment needs. Every Transaction is secured, documented and stored.
-              </p>
-              <Link 
-                href="/signup" 
-                className="inline-flex items-center gap-2 bg-white text-[#0A192F] px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg"
-              >
-                Click to Start Free
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
+    <div className="bg-white/95 backdrop-blur-lg rounded-xl shadow-xl p-3 w-64 border border-white/50">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-2 pb-2 border-b border-gray-200/50">
+        <div className="flex items-center gap-1.5">
+          <div className="w-5 h-5 bg-gradient-to-br from-orange-500 to-orange-600 rounded flex items-center justify-center">
+            <span className="text-white font-bold text-[10px]">R</span>
           </div>
-
-          {/* RIGHT SIDE: User Confidence Message */}
-          <div className="lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start lg:-mt-16">
-            
-            {/* H5 Lead-in Text */}
-            <div className="bg-[#2C4A73]/10 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 shadow-md border border-[#2C4A73]/20 -mt-4">
-              <h5 className="text-lg font-bold text-[#0A192F]">
-                Albina Pay Empowers You to make Payments with Confidence.
-              </h5>
-            </div>
-
-            {/* Main Paragraph - 3 LINES */}
-            <div className="flex flex-col gap-2">
-              <p className="text-lg sm:text-xl font-semibold text-[#0A192F] leading-snug">
-                Take Control with Confidence
-              </p>
-              <p className="text-lg sm:text-xl font-semibold text-[#0A192F] leading-snug">
-                over Your Finance and Payment for Your Goods and Services,
-              </p>
-              <p className="text-lg sm:text-xl font-semibold text-[#0A192F] leading-snug">
-                Using Our Rich Interface and Powerful Features.
-              </p>
-            </div>
-
+          <div>
+            <div className="font-bold text-gray-900 text-xs">Remita</div>
+            <div className="text-[8px] text-gray-500">Payment Services</div>
           </div>
-
         </div>
-
-        {/* ===== FEATURE CARDS SECTION ===== */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          
-          {/* Card 1: Multi-Currency Wallets */}
-          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Multi-Currency Wallets
-            </h3>
-            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-              Hold NGN, GHS, ZAR, USD, and GBP in one account. Send and receive money locally and internationally with instant conversion at fair rates.
-            </p>
-            
-            {/* Image Container with Floating Interface */}
-            <div className="relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
-              <img 
-                src="/Image/feature-multi-currency.png" 
-                alt="Young professional using Albina Pay" 
-                className="w-full h-full object-cover"
-              />
-              
-              <IncomeNotification />
-              
-              <div className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 scale-90">
-                <AnimatedTransaction />
-              </div>
-            </div>
-
-            <Link 
-              href="/features" 
-              className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all"
-            >
-              Learn More
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-
-          {/* Card 2: Gateway Payment Hub */}
-          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Gateway Payment Hub
-            </h3>
-            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-              Pay school fees, bills, and invoices directly via Remita. Generate RRR numbers, pay existing invoices, and complete transactions without leaving Albina Pay. Pay with remitta and Albina Pay saves your payment invoices for you.
-            </p>
-            
-            {/* Image Container with Floating Interface */}
-            <div className="relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
-              <img 
-                src="/Image/feature-gateway-hub.png" 
-                alt="Students paying school fees" 
-                className="w-full h-full object-cover"
-              />
-              
-              <div className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 scale-90">
-                <RemittaPayment />
-              </div>
-            </div>
-
-            <Link 
-              href="/features" 
-              className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all"
-            >
-              Learn More
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-
-        </div>
-
       </div>
-    </section>
+
+      {/* Service Options */}
+      <div className="mb-2">
+        <div className="text-[10px] text-gray-500 mb-1">Quick Services</div>
+        <div className="space-y-1">
+          <div className="flex items-center gap-1.5 bg-orange-50 rounded p-1.5 border border-orange-200/50">
+            <div className="w-4 h-4 bg-orange-500 rounded flex items-center justify-center">
+              <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <span className="text-[9px] font-semibold text-orange-700">Pay RRR Invoice</span>
+          </div>
+          <div className="flex items-center gap-1.5 bg-gray-50 rounded p-1.5 border border-gray-200/50">
+            <div className="w-4 h-4 bg-[#2C4A73] rounded flex items-center justify-center">
+              <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+            </div>
+            <span className="text-[9px] font-semibold text-gray-700">Generate RRR</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Payment Details */}
+      <div className="mb-2">
+        <div className="text-[10px] text-gray-500 mb-1">School Fees Payment</div>
+        <div className="bg-gradient-to-r from-[#2C4A73] to-[#1a3a5c] rounded p-2 text-white">
+          <div className="text-[9px] opacity-80 mb-0.5">University of Lagos</div>
+          <div className="text-sm font-bold">₦450,000.00</div>
+        </div>
+      </div>
+
+      {/* Success Status */}
+      <div className="flex items-center justify-center gap-1 bg-green-50 rounded py-1.5 border border-green-200/50">
+        <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+          <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <span className="text-[10px] font-bold text-green-600">Payment Successful!</span>
+      </div>
+    </div>
   );
 }
