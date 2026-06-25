@@ -7,26 +7,11 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
-  const [headerHeight, setHeaderHeight] = useState(0);
 
   // Company Colors
   const headerBg = 'bg-[#0A192F]';
   const buttonBg = 'bg-[#2C4A73]';
   const buttonHover = 'hover:bg-[#1A2D47]';
-
-  // Calculate header height on mount
-  useEffect(() => {
-    const updateHeight = () => {
-      const header = document.querySelector('header');
-      if (header) {
-        setHeaderHeight(header.offsetHeight);
-      }
-    };
-    
-    updateHeight();
-    window.addEventListener('resize', updateHeight);
-    return () => window.removeEventListener('resize', updateHeight);
-  }, []);
 
   // Dispatch custom event when dropdown state changes
   useEffect(() => {
@@ -56,7 +41,7 @@ export default function Header() {
       </div>
 
       {/* Main Navigation Bar */}
-      <header className={`${headerBg} shadow-lg sticky top-0 z-[100] relative`}>
+      <header className={`${headerBg} shadow-lg sticky top-0 z-[100]`}>
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24 w-full max-w-7xl mx-auto">
 
@@ -74,7 +59,7 @@ export default function Header() {
 
               {/* PRODUCTS DROPDOWN */}
               <div
-                className="relative h-full flex items-center"
+                className="relative"
                 onMouseEnter={() => setIsProductsOpen(true)}
                 onMouseLeave={() => setIsProductsOpen(false)}
               >
@@ -87,11 +72,8 @@ export default function Header() {
 
                 {isProductsOpen && (
                   <>
-                    {/* INVISIBLE BRIDGE - Prevents dropdown from closing when moving mouse */}
-                    <div className="absolute top-full left-0 w-full h-8 z-[99]" />
-
-                    {/* Full-Width Dropdown Menu - Positioned flush with header */}
-                    <div className="absolute top-full left-0 w-[200vw] -translate-x-1/2 bg-white shadow-2xl z-[100] border-t border-gray-100">
+                    {/* Full-Width Dropdown Menu */}
+                    <div className="absolute top-full left-0 w-full bg-white shadow-2xl z-[100] border-t border-gray-100 pt-4">
                       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                         <div className="grid grid-cols-4 gap-8 items-start">
 
@@ -198,7 +180,7 @@ export default function Header() {
         </div>
 
         {/* MOBILE MENU */}
-        <div className={`xl:hidden absolute top-full left-0 right-0 ${headerBg} shadow-2xl border-t border-gray-700 z-[99] transform transition-all duration-500 ease-in-out ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'}`}>
+        <div className={`xl:hidden ${headerBg} shadow-2xl border-t border-gray-700 z-[99] transform transition-all duration-500 ease-in-out ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'}`}>
           <div className="px-4 py-6 space-y-4 max-h-[80vh] overflow-y-auto">
 
             {/* Products Accordion */}
