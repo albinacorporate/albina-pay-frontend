@@ -47,36 +47,35 @@ export default function Features() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
           {/* Card 1: Multi-Currency Wallets */}
-          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12 flex flex-col">
+          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Multi-Currency Wallets</h3>
-            <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
               Hold NGN, GHS, ZAR, USD, and GBP in one account. Send and receive money locally and internationally with instant conversion at fair rates.
             </p>
 
-            {/* SIDE-BY-SIDE LAYOUT */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8 flex-grow">
-              
-              {/* 1. The Image (Left) */}
-              <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-64 md:h-80">
-                <img
-                  src="/Image/feature-multi-currency.webp"
-                  alt="Young professional using Albina Pay"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            {/* Image Container with Floating UI - Monnify Style */}
+            <div className="relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
+              {/* Full Width Background Image */}
+              <img
+                src="/Image/feature-multi-currency.webp"
+                alt="Young professional using Albina Pay"
+                className="w-full h-full object-cover"
+              />
 
-              {/* 2. The Animation (Right) */}
-              <div className="w-full md:w-1/2 flex flex-col items-center justify-center gap-4">
-                <div className="relative w-full flex justify-center">
-                   <IncomeNotification />
-                </div>
-                <div className="scale-90 md:scale-100">
-                  <AnimatedTransaction />
-                </div>
+              {/* Income Notification - Top Center */}
+              <IncomeNotification />
+
+              {/* Floating Animated Transaction - LEFT side (doesn't touch person on right) */}
+              <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
+                <AnimatedTransaction />
               </div>
             </div>
 
-            <Link href="/features" className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all mt-auto">
+            {/* Learn More */}
+            <Link
+              href="/features"
+              className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all"
+            >
               Learn More
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -85,33 +84,32 @@ export default function Features() {
           </div>
 
           {/* Card 2: Gateway Payment Hub */}
-          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12 flex flex-col">
+          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Gateway Payment Hub</h3>
-            <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-              Pay school fees, bills, and invoices directly via Remita. Generate RRR numbers, pay existing invoices, and complete transactions without leaving Albina Pay.
+            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+              Pay school fees, bills, and invoices directly via Remita. Generate RRR numbers, pay existing invoices, and complete transactions without leaving Albina Pay. Pay with remitta and Albina Pay saves your payment invoices for you.
             </p>
 
-            {/* SIDE-BY-SIDE LAYOUT */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8 flex-grow">
-              
-              {/* 1. The Image (Left) */}
-              <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-64 md:h-80">
-                <img
-                  src="/Image/feature-gateway-hub.webp"
-                  alt="Students paying school fees"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            {/* Image Container with Floating UI - Monnify Style */}
+            <div className="relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
+              {/* Full Width Background Image */}
+              <img
+                src="/Image/feature-gateway-hub.webp"
+                alt="Students paying school fees"
+                className="w-full h-full object-cover"
+              />
 
-              {/* 2. The Animation (Right) */}
-              <div className="w-full md:w-1/2 flex items-center justify-center">
-                <div className="scale-90 md:scale-100">
-                  <RemittaPayment />
-                </div>
+              {/* Floating Remitta Payment Interface - LEFT side (doesn't touch person on right) */}
+              <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
+                <RemittaPayment />
               </div>
             </div>
 
-            <Link href="/features" className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all mt-auto">
+            {/* Learn More */}
+            <Link
+              href="/features"
+              className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all"
+            >
               Learn More
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -120,6 +118,7 @@ export default function Features() {
           </div>
 
         </div>
+
       </div>
     </section>
   );
