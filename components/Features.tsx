@@ -10,7 +10,6 @@ export default function Features() {
 
         {/* ===== INTRODUCTION SECTION ===== */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 mb-20">
-
           {/* LEFT SIDE: Dark Blue Transparent Card */}
           <div className="lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start -mt-12 lg:-mt-20">
             <div className="w-full bg-[#0A192F]/60 backdrop-blur-md border border-[#2C4A73]/20 rounded-2xl p-8 lg:p-10 shadow-2xl">
@@ -31,68 +30,53 @@ export default function Features() {
 
           {/* RIGHT SIDE: User Confidence Message */}
           <div className="lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start lg:-mt-16">
-
-            {/* H5 Lead-in Text */}
             <div className="bg-[#2C4A73]/10 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 shadow-md border border-[#2C4A73]/20 -mt-4">
               <h5 className="text-lg font-bold text-[#0A192F]">
                 Albina Pay Empowers You to make Payments with Confidence.
               </h5>
             </div>
-
-            {/* Main Paragraph - 3 LINES */}
             <div className="flex flex-col gap-2">
-              <p className="text-lg sm:text-xl font-semibold text-[#0A192F] leading-snug">
-                Take Control with Confidence
-              </p>
-              <p className="text-lg sm:text-xl font-semibold text-[#0A192F] leading-snug">
-                over Your Finance and Payment for Your Goods and Services,
-              </p>
-              <p className="text-lg sm:text-xl font-semibold text-[#0A192F] leading-snug">
-                Using Our Rich Interface and Powerful Features.
-              </p>
+              <p className="text-lg sm:text-xl font-semibold text-[#0A192F] leading-snug">Take Control with Confidence</p>
+              <p className="text-lg sm:text-xl font-semibold text-[#0A192F] leading-snug">over Your Finance and Payment for Your Goods and Services,</p>
+              <p className="text-lg sm:text-xl font-semibold text-[#0A192F] leading-snug">Using Our Rich Interface and Powerful Features.</p>
             </div>
-
           </div>
-
         </div>
 
         {/* ===== FEATURE CARDS SECTION ===== */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
           {/* Card 1: Multi-Currency Wallets */}
-          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Multi-Currency Wallets
-            </h3>
-            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12 flex flex-col">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Multi-Currency Wallets</h3>
+            <p className="text-gray-600 mb-8 text-lg leading-relaxed">
               Hold NGN, GHS, ZAR, USD, and GBP in one account. Send and receive money locally and internationally with instant conversion at fair rates.
             </p>
 
-            {/* Side-by-Side Layout: Image + Animation */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
-              {/* Image - Left Side */}
-              <div className="w-full sm:w-3/5 rounded-2xl overflow-hidden shadow-lg">
+            {/* SIDE-BY-SIDE LAYOUT */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8 flex-grow">
+              
+              {/* 1. The Image (Left) */}
+              <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-64 md:h-80">
                 <img
                   src="/Image/feature-multi-currency.webp"
                   alt="Young professional using Albina Pay"
-                  className="w-full h-64 object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Animation - Right Side */}
-              <div className="w-full sm:w-2/5 flex flex-col items-center gap-4">
-                <IncomeNotification />
-                <div className="scale-90">
+              {/* 2. The Animation (Right) */}
+              <div className="w-full md:w-1/2 flex flex-col items-center justify-center gap-4">
+                <div className="relative w-full flex justify-center">
+                   <IncomeNotification />
+                </div>
+                <div className="scale-90 md:scale-100">
                   <AnimatedTransaction />
                 </div>
               </div>
             </div>
 
-            {/* Learn More */}
-            <Link
-              href="/features"
-              className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all"
-            >
+            <Link href="/features" className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all mt-auto">
               Learn More
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -101,38 +85,33 @@ export default function Features() {
           </div>
 
           {/* Card 2: Gateway Payment Hub */}
-          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Gateway Payment Hub
-            </h3>
-            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-              Pay school fees, bills, and invoices directly via Remita. Generate RRR numbers, pay existing invoices, and complete transactions without leaving Albina Pay. Pay with remitta and Albina Pay saves your payment invoices for you.
+          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12 flex flex-col">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Gateway Payment Hub</h3>
+            <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+              Pay school fees, bills, and invoices directly via Remita. Generate RRR numbers, pay existing invoices, and complete transactions without leaving Albina Pay.
             </p>
 
-            {/* Side-by-Side Layout: Image + Animation */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
-              {/* Image - Left Side */}
-              <div className="w-full sm:w-3/5 rounded-2xl overflow-hidden shadow-lg">
+            {/* SIDE-BY-SIDE LAYOUT */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8 flex-grow">
+              
+              {/* 1. The Image (Left) */}
+              <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-64 md:h-80">
                 <img
                   src="/Image/feature-gateway-hub.webp"
                   alt="Students paying school fees"
-                  className="w-full h-64 object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Animation - Right Side */}
-              <div className="w-full sm:w-2/5 flex items-center justify-center">
-                <div className="scale-90">
+              {/* 2. The Animation (Right) */}
+              <div className="w-full md:w-1/2 flex items-center justify-center">
+                <div className="scale-90 md:scale-100">
                   <RemittaPayment />
                 </div>
               </div>
             </div>
 
-            {/* Learn More */}
-            <Link
-              href="/features"
-              className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all"
-            >
+            <Link href="/features" className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all mt-auto">
               Learn More
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -141,7 +120,6 @@ export default function Features() {
           </div>
 
         </div>
-
       </div>
     </section>
   );
