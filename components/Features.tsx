@@ -94,7 +94,7 @@ export default function Features() {
             <div className="relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
               {/* Full Width Background Image */}
               <img
-                src="/Image/feature-gateway-hub.webp"
+                src="/Image/Remita-feature.png"
                 alt="Students paying school fees"
                 className="w-full h-full object-cover"
               />
