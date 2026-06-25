@@ -66,10 +66,10 @@ export default function Header() {
                 {isProductsOpen && (
                   <>
                     {/* INVISIBLE BRIDGE */}
-                    <div className="fixed top-[96px] left-0 w-full h-[32px] z-40 bg-transparent" />
+                    <div className="fixed top-[96px] left-0 w-full h-[32px] z-[99] bg-transparent" />
                     
                     {/* Full-Width Dropdown Menu */}
-                    <div className="fixed top-[128px] left-0 w-full bg-white shadow-2xl z-50 border-t border-gray-100">
+                    <div className="fixed top-[128px] left-0 w-full bg-white shadow-2xl z-[100] border-t border-gray-100">
                       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                         <div className="grid grid-cols-4 gap-8 items-start">
                           
@@ -176,7 +176,7 @@ export default function Header() {
         </div>
 
         {/* MOBILE MENU: SLIDES DOWN FROM HEADER BOTTOM */}
-        <div className={`xl:hidden absolute top-full left-0 right-0 ${headerBg} shadow-2xl border-t border-gray-700 z-40 transform transition-all duration-500 ease-in-out ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'}`}>
+        <div className={`xl:hidden absolute top-full left-0 right-0 ${headerBg} shadow-2xl border-t border-gray-700 z-[99] transform transition-all duration-500 ease-in-out ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'}`}>
           <div className="px-4 py-6 space-y-4 max-h-[80vh] overflow-y-auto">
             
             {/* 6 MENU ITEMS */}
