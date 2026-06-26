@@ -65,7 +65,7 @@ export default function Features() {
                   <img
                     src="/Image/feature-multi-currency.webp"
                     alt="Young professional using Albina Pay"
-                    className="w-full h-full object-cover object-right"
+                    className="w-full h-full object-cover object-[40%_center]"
                   />
                 </div>
                 <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
@@ -116,7 +116,7 @@ export default function Features() {
                   <img
                     src="/Image/Remita-feature.png"
                     alt="Students paying school fees with Remita"
-                    className="w-full h-full object-cover object-right"
+                    className="w-full h-full object-cover object-[40%_center]"
                   />
                 </div>
                 <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
@@ -166,7 +166,7 @@ export default function Features() {
                   <img
                     src="/Image/feature-currency-conversion.webp"
                     alt="Currency conversion interface"
-                    className="w-full h-full object-cover object-left"
+                    className="w-full h-full object-cover object-[30%_center]"
                   />
                 </div>
                 <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
@@ -261,13 +261,12 @@ export default function Features() {
             </div>
 
             <div className="order-2 lg:order-none">
-              {/* Mobile: Side-by-side layout - man centered */}
               <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
                 <div className="w-[55%] h-72 relative">
                   <img
                     src="/Image/feature-document-vault.webp"
                     alt="Secure document storage"
-                    className="w-full h-full object-cover object-[25%_center]"
+                    className="w-full h-full object-cover object-[30%_center]"
                   />
                 </div>
                 <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
@@ -277,14 +276,12 @@ export default function Features() {
                 </div>
               </div>
 
-              {/* Desktop: Animation on RIGHT side with more space */}
               <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
                 <img
                   src="/Image/feature-document-vault.webp"
                   alt="Secure document storage"
                   className="w-full h-full object-cover object-[20%_center]"
                 />
-                {/* Animation positioned on RIGHT side with more space */}
                 <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
                   <DocumentVault />
                 </div>
@@ -314,7 +311,6 @@ export default function Features() {
             </div>
 
             <div className="order-2 lg:order-none">
-              {/* Mobile: Side-by-side layout */}
               <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
                 <div className="w-[55%] h-72 relative">
                   <img
@@ -330,7 +326,6 @@ export default function Features() {
                 </div>
               </div>
 
-              {/* Desktop: Animation on RIGHT side */}
               <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
                 <img
                   src="/Image/feature-payroll-system.webp"
