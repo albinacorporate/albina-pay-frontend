@@ -2,6 +2,10 @@ import Link from 'next/link';
 import AnimatedTransaction from './AnimatedTransaction';
 import IncomeNotification from './IncomeNotification';
 import RemittaPayment from './RemittaPayment';
+import CurrencyConversion from './CurrencyConversion';
+import ChatPay from './ChatPay';
+import DocumentVault from './DocumentVault';
+import PayrollSystem from './PayrollSystem';
 
 export default function Features() {
   return (
@@ -47,74 +51,309 @@ export default function Features() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
           {/* Card 1: Multi-Currency Wallets */}
-          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Multi-Currency Wallets</h3>
-            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-              Hold NGN, GHS, ZAR, USD, and GBP in one account. Send and receive money locally and internationally with instant conversion at fair rates.
-            </p>
+          <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            <div className="order-1 lg:order-none">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Multi-Currency Wallets</h3>
+              <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
+                Hold NGN, GHS, ZAR, USD, and GBP in one account. Send and receive money locally and internationally with instant conversion at fair rates.
+              </p>
+            </div>
 
-            {/* Image Container with Floating UI - Monnify Style */}
-            <div className="relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
-              {/* Full Width Background Image */}
-              <img
-                src="/Image/feature-multi-currency.webp"
-                alt="Young professional using Albina Pay"
-                className="w-full h-full object-cover"
-              />
+            <div className="order-2 lg:order-none">
+              <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
+                <div className="w-[55%] h-72 relative">
+                  <img
+                    src="/Image/feature-multi-currency.webp"
+                    alt="Young professional using Albina Pay"
+                    className="w-full h-full object-cover object-right"
+                  />
+                </div>
+                <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
+                  <div className="w-full h-full flex items-center justify-center scale-90">
+                    <AnimatedTransaction />
+                  </div>
+                </div>
+              </div>
 
-              {/* Income Notification - Top Center */}
-              <IncomeNotification />
-
-              {/* Floating Animated Transaction - LEFT side (doesn't touch person on right) */}
-              <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
-                <AnimatedTransaction />
+              <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
+                <img
+                  src="/Image/feature-multi-currency.webp"
+                  alt="Young professional using Albina Pay"
+                  className="w-full h-full object-cover"
+                />
+                <IncomeNotification />
+                <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
+                  <AnimatedTransaction />
+                </div>
               </div>
             </div>
 
-            {/* Learn More */}
-            <Link
-              href="/features"
-              className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all"
-            >
-              Learn More
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            <div className="order-3 lg:order-none">
+              <Link
+                href="/features"
+                className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-base lg:text-lg hover:gap-3 transition-all"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
 
-          {/* Card 2: Gateway Payment Hub */}
-          <div className="bg-gray-100 rounded-3xl p-8 lg:p-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Gateway Payment Hub</h3>
-            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-              Pay school fees, bills, and invoices directly via Remita. Generate RRR numbers, pay existing invoices, and complete transactions without leaving Albina Pay. Pay with remitta and Albina Pay saves your payment invoices for you.
-            </p>
+          {/* Card 2: Remita Payment Services */}
+          <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            <div className="order-1 lg:order-none">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Remita Payment Services</h3>
+              <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
+                Pay school fees, bills, and invoices directly via Remita. Generate RRR numbers, pay existing invoices, and complete transactions without leaving Albina Pay. All your payment invoices are automatically saved to your Albina Vault for easy access.
+              </p>
+            </div>
 
-            {/* Image Container with Floating UI - Monnify Style */}
-            <div className="relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
-              {/* Full Width Background Image */}
-              <img
-                src="/Image/Remita-feature.png"
-                alt="Students paying school fees"
-                className="w-full h-full object-cover"
-              />
+            <div className="order-2 lg:order-none">
+              <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
+                <div className="w-[55%] h-72 relative">
+                  <img
+                    src="/Image/Remita-feature.png"
+                    alt="Students paying school fees with Remita"
+                    className="w-full h-full object-cover object-right"
+                  />
+                </div>
+                <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
+                  <div className="w-full h-full flex items-center justify-center scale-90">
+                    <RemittaPayment />
+                  </div>
+                </div>
+              </div>
 
-              {/* Floating Remitta Payment Interface - LEFT side (doesn't touch person on right) */}
-              <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
-                <RemittaPayment />
+              <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
+                <img
+                  src="/Image/Remita-feature.png"
+                  alt="Students paying school fees with Remita"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
+                  <RemittaPayment />
+                </div>
               </div>
             </div>
 
-            {/* Learn More */}
-            <Link
-              href="/features"
-              className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-lg hover:gap-3 transition-all"
-            >
-              Learn More
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            <div className="order-3 lg:order-none">
+              <Link
+                href="/features"
+                className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-base lg:text-lg hover:gap-3 transition-all"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 3: Currency Conversion */}
+          <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            <div className="order-1 lg:order-none">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Currency Conversion</h3>
+              <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
+                Convert between multiple currencies at competitive rates with instant conversion. Get the best exchange rates for NGN, USD, GBP, EUR, and more with zero hidden fees.
+              </p>
+            </div>
+
+            <div className="order-2 lg:order-none">
+              <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
+                <div className="w-[55%] h-72 relative">
+                  <img
+                    src="/Image/feature-currency-conversion.webp"
+                    alt="Currency conversion interface"
+                    className="w-full h-full object-cover object-left"
+                  />
+                </div>
+                <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
+                  <div className="w-full h-full flex items-center justify-center scale-90">
+                    <CurrencyConversion />
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
+                <img
+                  src="/Image/feature-currency-conversion.webp"
+                  alt="Currency conversion interface"
+                  className="w-full h-full object-cover object-left"
+                />
+                <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
+                  <CurrencyConversion />
+                </div>
+              </div>
+            </div>
+
+            <div className="order-3 lg:order-none">
+              <Link
+                href="/features"
+                className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-base lg:text-lg hover:gap-3 transition-all"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 4: Chat + Pay */}
+          <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            <div className="order-1 lg:order-none">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Chat + Pay</h3>
+              <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
+                Send money instantly through chat. Split bills, request payments from contacts, and pay friends directly within conversations. Fast, secure, and seamless.
+              </p>
+            </div>
+
+            <div className="order-2 lg:order-none">
+              <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
+                <div className="w-[55%] h-72 relative">
+                  <img
+                    src="/Image/feature-chat-pay.webp"
+                    alt="Chat and pay interface"
+                    className="w-full h-full object-cover object-[35%_center]"
+                  />
+                </div>
+                <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
+                  <div className="w-full h-full flex items-center justify-center scale-90">
+                    <ChatPay />
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
+                <img
+                  src="/Image/feature-chat-pay.webp"
+                  alt="Chat and pay interface"
+                  className="w-full h-full object-cover object-[30%_center]"
+                />
+                <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 scale-90">
+                  <ChatPay />
+                </div>
+              </div>
+            </div>
+
+            <div className="order-3 lg:order-none">
+              <Link
+                href="/features"
+                className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-base lg:text-lg hover:gap-3 transition-all"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 5: Document Vault */}
+          <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            <div className="order-1 lg:order-none">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Document Vault</h3>
+              <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
+                Securely store and access your financial documents, receipts, and invoices. Bank-grade encryption keeps your files safe and accessible anytime, anywhere.
+              </p>
+            </div>
+
+            <div className="order-2 lg:order-none">
+              {/* Mobile: Side-by-side layout - man centered */}
+              <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
+                <div className="w-[55%] h-72 relative">
+                  <img
+                    src="/Image/feature-document-vault.webp"
+                    alt="Secure document storage"
+                    className="w-full h-full object-cover object-[25%_center]"
+                  />
+                </div>
+                <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
+                  <div className="w-full h-full flex items-center justify-center scale-90">
+                    <DocumentVault />
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop: Animation on RIGHT side with more space */}
+              <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
+                <img
+                  src="/Image/feature-document-vault.webp"
+                  alt="Secure document storage"
+                  className="w-full h-full object-cover object-[20%_center]"
+                />
+                {/* Animation positioned on RIGHT side with more space */}
+                <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
+                  <DocumentVault />
+                </div>
+              </div>
+            </div>
+
+            <div className="order-3 lg:order-none">
+              <Link
+                href="/features"
+                className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-base lg:text-lg hover:gap-3 transition-all"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 6: Payroll System */}
+          <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            <div className="order-1 lg:order-none">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Payroll System</h3>
+              <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
+                Efficient payroll solutions for businesses. Manage employee payments, generate payslips, and track all transactions in one powerful dashboard.
+              </p>
+            </div>
+
+            <div className="order-2 lg:order-none">
+              {/* Mobile: Side-by-side layout */}
+              <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
+                <div className="w-[55%] h-72 relative">
+                  <img
+                    src="/Image/feature-payroll-system.webp"
+                    alt="Business payroll management"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
+                  <div className="w-full h-full flex items-center justify-center scale-90">
+                    <PayrollSystem />
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop: Animation on RIGHT side */}
+              <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
+                <img
+                  src="/Image/feature-payroll-system.webp"
+                  alt="Business payroll management"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
+                  <PayrollSystem />
+                </div>
+              </div>
+            </div>
+
+            <div className="order-3 lg:order-none">
+              <Link
+                href="/features"
+                className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-base lg:text-lg hover:gap-3 transition-all"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
 
         </div>
