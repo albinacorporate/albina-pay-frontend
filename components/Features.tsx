@@ -1,3 +1,22 @@
+/**
+ * Features.tsx
+ * Albina Pay - Features Section Component
+ * 
+ * This component displays all Albina Pay features in a responsive grid layout.
+ * Each feature card includes:
+ * - Title and description
+ * - Background image with person/product
+ * - Animated UI component showing the feature in action
+ * - Learn More link
+ * 
+ * RESPONSIVE BEHAVIOR:
+ * - Desktop (lg+): Full-width cards with floating animations
+ * - Mobile: Side-by-side layout (55% image, 45% animation)
+ * 
+ * Author: Albina Tech Team
+ * Last Updated: 2026
+ */
+
 import Link from 'next/link';
 import AnimatedTransaction from './AnimatedTransaction';
 import IncomeNotification from './IncomeNotification';
@@ -12,9 +31,13 @@ export default function Features() {
     <section className="bg-gray-50 py-20 lg:py-28 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* ===== INTRODUCTION SECTION ===== */}
+        {/* ============================================
+            INTRODUCTION SECTION
+            Two-column layout with CTA and value proposition
+        ============================================ */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 mb-20">
-          {/* LEFT SIDE: Dark Blue Transparent Card */}
+          
+          {/* LEFT COLUMN: Dark Blue CTA Card with glassmorphism effect */}
           <div className="lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start -mt-12 lg:-mt-20">
             <div className="w-full bg-[#0A192F]/60 backdrop-blur-md border border-[#2C4A73]/20 rounded-2xl p-8 lg:p-10 shadow-2xl">
               <p className="text-xl sm:text-2xl font-bold text-white leading-snug mb-8">
@@ -32,7 +55,7 @@ export default function Features() {
             </div>
           </div>
 
-          {/* RIGHT SIDE: User Confidence Message */}
+          {/* RIGHT COLUMN: Confidence Message */}
           <div className="lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start lg:-mt-16">
             <div className="bg-[#2C4A73]/10 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 shadow-md border border-[#2C4A73]/20 -mt-4">
               <h5 className="text-lg font-bold text-[#0A192F]">
@@ -47,25 +70,44 @@ export default function Features() {
           </div>
         </div>
 
-        {/* ===== FEATURE CARDS SECTION ===== */}
+        {/* ============================================
+            FEATURE CARDS GRID
+            2-column grid on desktop, 1-column on mobile
+            Each card uses flex-col on mobile, block on desktop
+        ============================================ */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-          {/* Card 1: Multi-Currency Wallets */}
+          {/* ============================================
+              CARD 1: MULTI-CURRENCY WALLETS
+              Feature: Hold multiple currencies in one account
+              
+              IMAGE POSITIONING (Mobile):
+              - Person is on the RIGHT side of the image
+              - Using object-[70%_center] to crop to the right 70%
+              - This ensures the person is visible in the 55% width container
+          ============================================ */}
           <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            
+            {/* Text Content - Always appears first */}
             <div className="order-1 lg:order-none">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Multi-Currency Wallets</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">
+                Multi-Currency Wallets
+              </h3>
               <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
                 Hold NGN, GHS, ZAR, USD, and GBP in one account. Send and receive money locally and internationally with instant conversion at fair rates.
               </p>
             </div>
 
+            {/* Visual Content: Image + Animation */}
             <div className="order-2 lg:order-none">
+              
+              {/* MOBILE LAYOUT: Side-by-side (55% image, 45% animation) */}
               <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
                 <div className="w-[55%] h-72 relative">
                   <img
                     src="/Image/feature-multi-currency.webp"
                     alt="Young professional using Albina Pay"
-                    className="w-full h-full object-cover object-[40%_center]"
+                    className="w-full h-full object-cover object-[70%_center]"
                   />
                 </div>
                 <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
@@ -75,12 +117,14 @@ export default function Features() {
                 </div>
               </div>
 
+              {/* DESKTOP LAYOUT: Full image with floating animations */}
               <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
                 <img
                   src="/Image/feature-multi-currency.webp"
                   alt="Young professional using Albina Pay"
                   className="w-full h-full object-cover"
                 />
+                {/* Floating UI Elements */}
                 <IncomeNotification />
                 <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
                   <AnimatedTransaction />
@@ -88,6 +132,7 @@ export default function Features() {
               </div>
             </div>
 
+            {/* Learn More Link */}
             <div className="order-3 lg:order-none">
               <Link
                 href="/features"
@@ -101,22 +146,37 @@ export default function Features() {
             </div>
           </div>
 
-          {/* Card 2: Remita Payment Services */}
+          {/* ============================================
+              CARD 2: REMITA PAYMENT SERVICES
+              Feature: Pay school fees, bills, and invoices via Remita
+              
+              IMAGE POSITIONING (Mobile):
+              - Person is on the RIGHT side of the image (woman in pink)
+              - Using object-[65%_center] to crop to the right 65%
+              - This ensures the person is visible in the 55% width container
+          ============================================ */}
           <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            
+            {/* Text Content */}
             <div className="order-1 lg:order-none">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Remita Payment Services</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">
+                Remita Payment Services
+              </h3>
               <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
                 Pay school fees, bills, and invoices directly via Remita. Generate RRR numbers, pay existing invoices, and complete transactions without leaving Albina Pay. All your payment invoices are automatically saved to your Albina Vault for easy access.
               </p>
             </div>
 
+            {/* Visual Content: Image + Animation */}
             <div className="order-2 lg:order-none">
+              
+              {/* MOBILE LAYOUT: Side-by-side */}
               <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
                 <div className="w-[55%] h-72 relative">
                   <img
                     src="/Image/Remita-feature.png"
                     alt="Students paying school fees with Remita"
-                    className="w-full h-full object-cover object-[40%_center]"
+                    className="w-full h-full object-cover object-[65%_center]"
                   />
                 </div>
                 <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
@@ -126,6 +186,7 @@ export default function Features() {
                 </div>
               </div>
 
+              {/* DESKTOP LAYOUT: Full image with floating animation */}
               <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
                 <img
                   src="/Image/Remita-feature.png"
@@ -138,6 +199,7 @@ export default function Features() {
               </div>
             </div>
 
+            {/* Learn More Link */}
             <div className="order-3 lg:order-none">
               <Link
                 href="/features"
@@ -151,16 +213,31 @@ export default function Features() {
             </div>
           </div>
 
-          {/* Card 3: Currency Conversion */}
+          {/* ============================================
+              CARD 3: CURRENCY CONVERSION
+              Feature: Convert between multiple currencies
+              
+              IMAGE POSITIONING (Mobile):
+              - Person is on the LEFT side (airport setting)
+              - Using object-[30%_center] to crop to the left 30%
+              - Animation is on the RIGHT side
+          ============================================ */}
           <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            
+            {/* Text Content */}
             <div className="order-1 lg:order-none">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Currency Conversion</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">
+                Currency Conversion
+              </h3>
               <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
                 Convert between multiple currencies at competitive rates with instant conversion. Get the best exchange rates for NGN, USD, GBP, EUR, and more with zero hidden fees.
               </p>
             </div>
 
+            {/* Visual Content: Image + Animation */}
             <div className="order-2 lg:order-none">
+              
+              {/* MOBILE LAYOUT: Side-by-side */}
               <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
                 <div className="w-[55%] h-72 relative">
                   <img
@@ -176,6 +253,7 @@ export default function Features() {
                 </div>
               </div>
 
+              {/* DESKTOP LAYOUT: Animation on RIGHT side */}
               <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
                 <img
                   src="/Image/feature-currency-conversion.webp"
@@ -188,6 +266,7 @@ export default function Features() {
               </div>
             </div>
 
+            {/* Learn More Link */}
             <div className="order-3 lg:order-none">
               <Link
                 href="/features"
@@ -201,16 +280,30 @@ export default function Features() {
             </div>
           </div>
 
-          {/* Card 4: Chat + Pay */}
+          {/* ============================================
+              CARD 4: CHAT + PAY
+              Feature: Send money through chat conversations
+              
+              IMAGE POSITIONING (Mobile):
+              - Woman is centered in the frame
+              - Using object-[35%_center] for optimal centering
+          ============================================ */}
           <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            
+            {/* Text Content */}
             <div className="order-1 lg:order-none">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Chat + Pay</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">
+                Chat + Pay
+              </h3>
               <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
                 Send money instantly through chat. Split bills, request payments from contacts, and pay friends directly within conversations. Fast, secure, and seamless.
               </p>
             </div>
 
+            {/* Visual Content: Image + Animation */}
             <div className="order-2 lg:order-none">
+              
+              {/* MOBILE LAYOUT: Side-by-side */}
               <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
                 <div className="w-[55%] h-72 relative">
                   <img
@@ -226,6 +319,7 @@ export default function Features() {
                 </div>
               </div>
 
+              {/* DESKTOP LAYOUT: Animation on RIGHT side */}
               <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
                 <img
                   src="/Image/feature-chat-pay.webp"
@@ -238,6 +332,7 @@ export default function Features() {
               </div>
             </div>
 
+            {/* Learn More Link */}
             <div className="order-3 lg:order-none">
               <Link
                 href="/features"
@@ -251,16 +346,30 @@ export default function Features() {
             </div>
           </div>
 
-          {/* Card 5: Document Vault */}
+          {/* ============================================
+              CARD 5: DOCUMENT VAULT
+              Feature: Secure document storage
+              
+              IMAGE POSITIONING (Mobile):
+              - Man is positioned left-of-center
+              - Using object-[30%_center] to keep him visible
+          ============================================ */}
           <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            
+            {/* Text Content */}
             <div className="order-1 lg:order-none">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Document Vault</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">
+                Document Vault
+              </h3>
               <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
                 Securely store and access your financial documents, receipts, and invoices. Bank-grade encryption keeps your files safe and accessible anytime, anywhere.
               </p>
             </div>
 
+            {/* Visual Content: Image + Animation */}
             <div className="order-2 lg:order-none">
+              
+              {/* MOBILE LAYOUT: Side-by-side */}
               <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
                 <div className="w-[55%] h-72 relative">
                   <img
@@ -276,6 +385,7 @@ export default function Features() {
                 </div>
               </div>
 
+              {/* DESKTOP LAYOUT: Animation on RIGHT side */}
               <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
                 <img
                   src="/Image/feature-document-vault.webp"
@@ -288,6 +398,7 @@ export default function Features() {
               </div>
             </div>
 
+            {/* Learn More Link */}
             <div className="order-3 lg:order-none">
               <Link
                 href="/features"
@@ -301,16 +412,29 @@ export default function Features() {
             </div>
           </div>
 
-          {/* Card 6: Payroll System */}
+          {/* ============================================
+              CARD 6: PAYROLL SYSTEM
+              Feature: Business payroll management
+              
+              IMAGE POSITIONING (Mobile):
+              - Using object-center for balanced composition
+          ============================================ */}
           <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            
+            {/* Text Content */}
             <div className="order-1 lg:order-none">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">Payroll System</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">
+                Payroll System
+              </h3>
               <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
                 Efficient payroll solutions for businesses. Manage employee payments, generate payslips, and track all transactions in one powerful dashboard.
               </p>
             </div>
 
+            {/* Visual Content: Image + Animation */}
             <div className="order-2 lg:order-none">
+              
+              {/* MOBILE LAYOUT: Side-by-side */}
               <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
                 <div className="w-[55%] h-72 relative">
                   <img
@@ -326,6 +450,7 @@ export default function Features() {
                 </div>
               </div>
 
+              {/* DESKTOP LAYOUT: Animation on RIGHT side */}
               <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
                 <img
                   src="/Image/feature-payroll-system.webp"
@@ -338,6 +463,7 @@ export default function Features() {
               </div>
             </div>
 
+            {/* Learn More Link */}
             <div className="order-3 lg:order-none">
               <Link
                 href="/features"
@@ -352,7 +478,6 @@ export default function Features() {
           </div>
 
         </div>
-
       </div>
     </section>
   );
