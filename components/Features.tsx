@@ -25,6 +25,8 @@ import CurrencyConversion from './CurrencyConversion';
 import ChatPay from './ChatPay';
 import DocumentVault from './DocumentVault';
 import PayrollSystem from './PayrollSystem';
+import BillsPayment from './BillsPayment';
+import CardServices from './CardServices';
 
 export default function Features() {
   return (
@@ -417,7 +419,8 @@ export default function Features() {
               Feature: Business payroll management
               
               IMAGE POSITIONING (Mobile):
-              - Using object-center for balanced composition
+              - Workers on the left side
+              - Using object-left to show the team
           ============================================ */}
           <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
             
@@ -440,7 +443,7 @@ export default function Features() {
                   <img
                     src="/Image/feature-payroll-system.webp"
                     alt="Business payroll management"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-left"
                   />
                 </div>
                 <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
@@ -455,10 +458,142 @@ export default function Features() {
                 <img
                   src="/Image/feature-payroll-system.webp"
                   alt="Business payroll management"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-left"
                 />
                 <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
                   <PayrollSystem />
+                </div>
+              </div>
+            </div>
+
+            {/* Learn More Link */}
+            <div className="order-3 lg:order-none">
+              <Link
+                href="/features"
+                className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-base lg:text-lg hover:gap-3 transition-all"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* ============================================
+              CARD 7: BILLS PAYMENT
+              Feature: Pay utility bills, airtime, and subscriptions
+              
+              IMAGE POSITIONING (Mobile):
+              - Person on the left side
+              - Using object-left to show the person
+          ============================================ */}
+          <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            
+            {/* Text Content */}
+            <div className="order-1 lg:order-none">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">
+                Bills Payment
+              </h3>
+              <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
+                Pay electricity, water, cable TV, airtime, and internet bills instantly. Get automatic receipts saved to your Albina Vault. Never miss a payment again.
+              </p>
+            </div>
+
+            {/* Visual Content: Image + Animation */}
+            <div className="order-2 lg:order-none">
+              
+              {/* MOBILE LAYOUT: Side-by-side */}
+              <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
+                <div className="w-[55%] h-72 relative">
+                  <img
+                    src="/Image/feature-bills-payment.webp"
+                    alt="Bills payment interface"
+                    className="w-full h-full object-cover object-left"
+                  />
+                </div>
+                <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
+                  <div className="w-full h-full flex items-center justify-center scale-90">
+                    <BillsPayment />
+                  </div>
+                </div>
+              </div>
+
+              {/* DESKTOP LAYOUT: Animation on RIGHT side */}
+              <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
+                <img
+                  src="/Image/feature-bills-payment.webp"
+                  alt="Bills payment interface"
+                  className="w-full h-full object-cover object-left"
+                />
+                <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
+                  <BillsPayment />
+                </div>
+              </div>
+            </div>
+
+            {/* Learn More Link */}
+            <div className="order-3 lg:order-none">
+              <Link
+                href="/features"
+                className="inline-flex items-center gap-2 text-[#2C4A73] font-semibold text-base lg:text-lg hover:gap-3 transition-all"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* ============================================
+              CARD 8: CARD SERVICES
+              Feature: Virtual and physical card management
+              
+              IMAGE POSITIONING (Mobile):
+              - Person on the left side
+              - Using object-left to show the person
+          ============================================ */}
+          <div className="bg-gray-100 rounded-3xl p-6 lg:p-12 flex flex-col lg:block">
+            
+            {/* Text Content */}
+            <div className="order-1 lg:order-none">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">
+                Card Services
+              </h3>
+              <p className="text-gray-600 mb-4 lg:mb-6 text-base lg:text-lg leading-relaxed">
+                Create virtual and physical cards instantly. Shop online, lock/unlock cards, and track all card transactions. Full control over your spending with real-time notifications.
+              </p>
+            </div>
+
+            {/* Visual Content: Image + Animation */}
+            <div className="order-2 lg:order-none">
+              
+              {/* MOBILE LAYOUT: Side-by-side */}
+              <div className="flex lg:hidden flex-row gap-0 mb-4 shadow-lg rounded-2xl overflow-hidden">
+                <div className="w-[55%] h-72 relative">
+                  <img
+                    src="/Image/feature-card-services.webp"
+                    alt="Card services interface"
+                    className="w-full h-full object-cover object-left"
+                  />
+                </div>
+                <div className="w-[45%] h-72 bg-white flex items-center justify-center p-1">
+                  <div className="w-full h-full flex items-center justify-center scale-90">
+                    <CardServices />
+                  </div>
+                </div>
+              </div>
+
+              {/* DESKTOP LAYOUT: Animation on RIGHT side */}
+              <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white shadow-lg mb-6 h-96">
+                <img
+                  src="/Image/feature-card-services.webp"
+                  alt="Card services interface"
+                  className="w-full h-full object-cover object-left"
+                />
+                <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 scale-90">
+                  <CardServices />
                 </div>
               </div>
             </div>
