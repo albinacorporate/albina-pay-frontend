@@ -79,11 +79,13 @@ export default function Header() {
 
             {/* LOGO */}
             <div className="flex items-center justify-center order-1 lg:order-3 h-full">
-              <img
-                src="/Image/Albina%20Pay%20Logo%20White%20Font.png"
-                alt="Albina Pay Logo"
-                className="h-12 lg:h-16 w-auto object-contain -mt-2 lg:-mt-4"
-              />
+              <Link href="/">
+                <img
+                  src="/Image/Albina%20Pay%20Logo%20White%20Font.png"
+                  alt="Albina Pay Logo"
+                  className="h-12 lg:h-16 w-auto object-contain -mt-2 lg:-mt-4 hover:opacity-90 transition-opacity"
+                />
+              </Link>
             </div>
 
             {/* CENTER: Navigation Items */}
@@ -115,9 +117,7 @@ export default function Header() {
                       onMouseLeave={handleProductsLeave}
                     >
                       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                        {/* Updated grid: 4 columns with branding + 7 features */}
                         <div className="grid grid-cols-4 gap-8 items-start">
-                          
                           {/* Column 1 - Branding Image */}
                           <div className="col-span-1">
                             <img
@@ -196,15 +196,24 @@ export default function Header() {
             {/* BUTTONS & HAMBURGER */}
             <div className="flex items-center justify-center gap-2 sm:gap-4 order-3 lg:order-1 h-full">
               <div className="hidden lg:flex items-center gap-6">
-                <button className={`${buttonBg} ${buttonHover} text-white px-6 py-2.5 rounded-md font-bold transition-all shadow-md flex items-center gap-2 whitespace-nowrap text-sm`}>
+                {/* UPDATED: Changed from <button> to <Link> */}
+                <Link 
+                  href="/register" 
+                  className={`${buttonBg} ${buttonHover} text-white px-6 py-2.5 rounded-md font-bold transition-all shadow-md flex items-center gap-2 whitespace-nowrap text-sm`}
+                >
                   Start for Free
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </button>
-                <button className="text-gray-300 hover:text-white font-medium transition-colors whitespace-nowrap text-sm border border-gray-600 hover:border-white px-4 py-2 rounded-md">
+                </Link>
+                
+                {/* UPDATED: Changed from <button> to <Link> */}
+                <Link 
+                  href="/login" 
+                  className="text-gray-300 hover:text-white font-medium transition-colors whitespace-nowrap text-sm border border-gray-600 hover:border-white px-4 py-2 rounded-md"
+                >
                   Login
-                </button>
+                </Link>
               </div>
 
               {/* Mobile Hamburger */}
@@ -285,8 +294,21 @@ export default function Header() {
             <div className="border-t border-gray-700 my-3"></div>
 
             <div className="pt-2 space-y-2 px-2">
-              <button className={`w-full ${buttonBg} ${buttonHover} text-white px-4 py-2.5 rounded-lg font-bold text-sm`}>Start for Free</button>
-              <button className="w-full bg-transparent border border-gray-500 text-white px-4 py-2.5 rounded-lg text-sm">Login</button>
+              {/* UPDATED: Changed from <button> to <Link> with onClick to close menu */}
+              <Link 
+                href="/register" 
+                className={`block w-full text-center ${buttonBg} ${buttonHover} text-white px-4 py-2.5 rounded-lg font-bold text-sm`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Start for Free
+              </Link>
+              <Link 
+                href="/login" 
+                className="block w-full text-center bg-transparent border border-gray-500 text-white px-4 py-2.5 rounded-lg text-sm hover:bg-gray-800 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Login
+              </Link>
             </div>
           </div>
         </div>
